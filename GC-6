@@ -1,0 +1,274 @@
+
+observation(log at last): multiple git revert checks: 
+
+
+  13/09/2023   10:53.50   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1 upd in commit20
+line2 for commi"*" rem in commit20
+line3 for commit-3
+line4 for commit-4
+                                                                                                                             ✓
+g
+  13/09/2023   10:53.51   /home/pavan.pagilla/Desktop/delete   master  git revert 35435d10d1969e8daf488ac39cc15b94903887e3
+Auto-merging file
+CONFLICT (content): Merge conflict in file
+error: could not revert 35435d1... 2: line 2 in file
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+                                                                                                                             ✗
+
+  13/09/2023   10:53.58   /home/pavan.pagilla/Desktop/delete   master  cat file
+<<<<<<< HEAD
+line1 for commit-1 upd in commit20
+line2 for commi"*" rem in commit20
+line3 for commit-3
+line4 for commit-4
+=======
+line1 for commit-1
+>>>>>>> parent of 35435d1 (2: line 2 in file)
+                                                                                                                             ✓
+
+  13/09/2023   10:54.01   /home/pavan.pagilla/Desktop/delete   master  git revert --abort
+                                                                                                                             ✓
+
+  13/09/2023   10:54.26   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1 upd in commit20
+line2 for commi"*" rem in commit20
+line3 for commit-3
+line4 for commit-4
+                                                                                                                             ✓
+
+  13/09/2023   10:54.35   /home/pavan.pagilla/Desktop/delete   master  git revert 3e2765a62012ab4c5f25a605766ab014e0d3055c ; #revert to before 3
+Auto-merging file
+CONFLICT (content): Merge conflict in file
+error: could not revert 3e2765a... 3:line3 in file
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+                                                                                                                             ✗
+
+  13/09/2023   10:55.24   /home/pavan.pagilla/Desktop/delete   master  cat file
+<<<<<<< HEAD
+line1 for commit-1 upd in commit20
+line2 for commi"*" rem in commit20
+line3 for commit-3
+line4 for commit-4
+=======
+line1 for commit-1
+line2 for commit-2
+>>>>>>> parent of 3e2765a (3:line3 in file)
+                                                                                                                             ✓
+
+  13/09/2023   10:55.28   /home/pavan.pagilla/Desktop/delete   master  git revert --abort
+                                                                                                                             ✓
+
+  13/09/2023   10:55.39   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1 upd in commit20
+line2 for commi"*" rem in commit20
+line3 for commit-3
+line4 for commit-4
+                                                                                                                             ✓
+
+  13/09/2023   10:55.45   /home/pavan.pagilla/Desktop/delete   master  git revert d0fe3f20fd77a79709383c14456df33da26db880
+Auto-merging file
+[master 4cef198] yes to Revert "4:line4 in file"
+ 1 file changed, 1 deletion(-)
+                                                                                                                             ✓
+
+  13/09/2023   10:56.25   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1 upd in commit20
+line2 for commi"*" rem in commit20
+line3 for commit-3
+                                                                                                                             ✓
+
+  13/09/2023   10:56.29   /home/pavan.pagilla/Desktop/delete   master  git revert 3e2765a62012ab4c5f25a605766ab014e0d3055c ; #revert to before 3
+Auto-merging file
+CONFLICT (content): Merge conflict in file
+error: could not revert 3e2765a... 3:line3 in file
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+                                                                                                                             ✗
+
+  13/09/2023   10:56.52   /home/pavan.pagilla/Desktop/delete   master  catfile
+catfile: command not found
+                                                                                                                             ✗
+  13/09/2023   10:57.00   /home/pavan.pagilla/Desktop/delete   master  cat file
+<<<<<<< HEAD
+line1 for commit-1 upd in commit20
+line2 for commi"*" rem in commit20
+line3 for commit-3
+=======
+line1 for commit-1
+line2 for commit-2
+>>>>>>> parent of 3e2765a (3:line3 in file)
+                                                                                                                             ✓
+
+  13/09/2023   10:57.03   /home/pavan.pagilla/Desktop/delete   master  vi file
+                                                                                                                             ✓
+
+  13/09/2023   10:57.20   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+                                                                                                                             ✓
+
+  13/09/2023   10:57.24   /home/pavan.pagilla/Desktop/delete   master  git add file
+                                                                                                                             ✓
+
+  13/09/2023   10:57.30   /home/pavan.pagilla/Desktop/delete   master  git revert --continue
+[master 3ed06b0] yes to Revert "3:line3 in file"
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+                                                                                                                             ✓
+
+  13/09/2023   10:57.57   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+                                                                                                                             ✓
+
+  13/09/2023   10:58.03   /home/pavan.pagilla/Desktop/delete   master 
+
+
+=========
+
+commit 3ed06b0212fdfb59c5d51a9fecc18c616f73b89f (HEAD -> master)
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 10:57:43 2023 +0530
+
+    yes to Revert "3:line3 in file"
+
+    This reverts commit 3e2765a62012ab4c5f25a605766ab014e0d3055c.
+
+commit 4cef19864ab6140920ce5c057da4fc3f6b926241
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 10:56:01 2023 +0530
+
+    yes to Revert "4:line4 in file"
+
+    This reverts commit d0fe3f20fd77a79709383c14456df33da26db880.
+
+commit ee0466916a6c3e08b487e344b0465ae9f5dc97e3
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 10:51:01 2023 +0530
+
+    yes to Revert "5:line5 in file"
+
+    This reverts commit 4f4170c418bc5bc07bf9609bcaf36aa009f000d4.
+
+commit af73e4196d0dd41340e180c01f6fa52cc0581c3d
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 10:47:31 2023 +0530
+
+    yes to Revert "yes to Revert "8:line8 in file""
+
+    This reverts commit c30742afef6d0f283f9b5778a2994fa564af8963.
+
+commit 6e3661745d3b28edeb1ae27ff31fd6ff94224e1e
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 10:31:07 2023 +0530
+
+    10: updated all the content
+
+commit c30742afef6d0f283f9b5778a2994fa564af8963
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 10:23:01 2023 +0530
+
+    yes to Revert "8:line8 in file"
+
+    This reverts commit a80c22eebb527e3b627a43c03a9bf99726883091.
+
+commit 3019acedfcd71c36a8dbf5c02fac5c0f601b34ad
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 10:16:26 2023 +0530
+
+    9:line9 in file and added content in line7
+
+commit a80c22eebb527e3b627a43c03a9bf99726883091
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 10:12:06 2023 +0530
+
+    8:line8 in file
+
+commit 8fc87c24081304564ce838273e160598eb03cc92
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 10:08:09 2023 +0530
+
+    7:line7 in file
+
+commit 1c51b2583b633142c666acd1b8ea3358bd98f319
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 10:04:43 2023 +0530
+
+    6:line6 in file
+
+commit 218cefcc5a62d70a66ba83673a8668e556b144fd
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:49:24 2023 +0530
+
+    yes to Revert "yes to Revert "5:line5 in file""
+
+    This reverts commit 6c77fe085830b2907ed2d96ac2ec217c9bbc0721.
+
+commit e30145b75aed565eb2a509379db83844935aa4ce
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:34:57 2023 +0530
+
+    yes to Revert "4:line4 in file"
+
+    This reverts commit d0fe3f20fd77a79709383c14456df33da26db880.
+
+commit 587f021eb6a98a58ccfe92433690de68cb5ffac7
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:29:58 2023 +0530
+
+    yes to Revert "2: line 2 in file"
+
+    This reverts commit 35435d10d1969e8daf488ac39cc15b94903887e3.
+
+commit 6c77fe085830b2907ed2d96ac2ec217c9bbc0721
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:21:23 2023 +0530
+
+    yes to Revert "5:line5 in file"
+
+    This reverts commit 4f4170c418bc5bc07bf9609bcaf36aa009f000d4.
+
+commit 4f4170c418bc5bc07bf9609bcaf36aa009f000d4
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:16:43 2023 +0530
+
+    5:line5 in file
+
+commit d0fe3f20fd77a79709383c14456df33da26db880
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:16:08 2023 +0530
+
+    4:line4 in file
+
+commit 3e2765a62012ab4c5f25a605766ab014e0d3055c
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:13:05 2023 +0530
+
+    3:line3 in file
+
+commit 35435d10d1969e8daf488ac39cc15b94903887e3
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:11:22 2023 +0530
+
+    2: line 2 in file
+
+commit ab621150765edfaeb98d7f0ed96bf8eb22b6bde3
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:08:13 2023 +0530
+
+    1: file first line
+

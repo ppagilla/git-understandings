@@ -1,0 +1,343 @@
+overview: 
+I made a file with file lines individual for 5 commits,
+Now with this commits, i can traverse to the latest commit(which modifies the file like how it used to be before this commit)
+
+If i revert to the 2nd commit where we have added the line-2, then we have to manually update(remove) content the file with enough info thrown 
+by git command(and continuing the revert, will yield us the file that will look exactly how it is before commit-2()i.e., 1-line)
+
+If i revert to the 4th commit where we have added the line-4, then we have to manually update(add) content the file with enough info thrown 
+by git command(and continuing the revert, will yield us the file that will look exactly how it is before commit-4(i.e., 3-lines))
+
+=========================================================================================================
+FINAL LOG: 
+
+commit e30145b75aed565eb2a509379db83844935aa4ce (HEAD -> master)
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:34:57 2023 +0530
+
+    yes to Revert "4:line4 in file"
+
+    This reverts commit d0fe3f20fd77a79709383c14456df33da26db880.
+
+commit 587f021eb6a98a58ccfe92433690de68cb5ffac7
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:29:58 2023 +0530
+
+    yes to Revert "2: line 2 in file"
+
+    This reverts commit 35435d10d1969e8daf488ac39cc15b94903887e3.
+
+commit 6c77fe085830b2907ed2d96ac2ec217c9bbc0721
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:21:23 2023 +0530
+
+    yes to Revert "5:line5 in file"
+
+    This reverts commit 4f4170c418bc5bc07bf9609bcaf36aa009f000d4.
+
+commit 4f4170c418bc5bc07bf9609bcaf36aa009f000d4
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:16:43 2023 +0530
+
+    5:line5 in file
+
+commit d0fe3f20fd77a79709383c14456df33da26db880
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:16:08 2023 +0530
+
+    4:line4 in file
+
+commit 3e2765a62012ab4c5f25a605766ab014e0d3055c
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:13:05 2023 +0530
+
+    3:line3 in file
+
+commit 35435d10d1969e8daf488ac39cc15b94903887e3
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:11:22 2023 +0530
+
+    2: line 2 in file
+
+commit ab621150765edfaeb98d7f0ed96bf8eb22b6bde3
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:08:13 2023 +0530
+
+    1: file first line
+
+====================================================================================================================
+
+
+reverting the old changes line2 will get removed if 35435d10d1969e8daf488ac39cc15b94903887e3 is reverted i.e., commit-2 is reverted
+
+
+
+commit 4f4170c418bc5bc07bf9609bcaf36aa009f000d4 (HEAD -> master)
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:16:43 2023 +0530
+
+    5:line5 in file
+
+commit d0fe3f20fd77a79709383c14456df33da26db880
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:16:08 2023 +0530
+
+    4:line4 in file
+
+commit 3e2765a62012ab4c5f25a605766ab014e0d3055c
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:13:05 2023 +0530
+
+    3:line3 in file
+
+commit 35435d10d1969e8daf488ac39cc15b94903887e3
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:11:22 2023 +0530
+
+    2: line 2 in file
+
+commit ab621150765edfaeb98d7f0ed96bf8eb22b6bde3
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:08:13 2023 +0530
+
+    1: file first line
+
+
+
+============================================================================================================================
+reverting the latest 4f4170c418bc5bc07bf9609bcaf36aa009f000d4 commit: 
+so the changes added in above commit will be deleted(line 5 will be deleted)
+
+
+  13/09/2023   09:19.49   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+line5 for commit-5
+                                                                                                                             ✓
+
+  13/09/2023   09:19.53   /home/pavan.pagilla/Desktop/delete   master  git revert 4f4170c418bc5bc07bf9609bcaf36aa009f000d4
+[master 6c77fe0] yes to Revert "5:line5 in file"
+ 1 file changed, 1 deletion(-)
+                                                                                                                             ✓
+
+  13/09/2023   09:21.32   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+                                                                                                                             ✓
+
+  13/09/2023   09:21.54   /home/pavan.pagilla/Desktop/delete   master 
+============================================================================================================================
+
+
+  13/09/2023   09:24.10   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+                                                                                                                             ✓
+
+  13/09/2023   09:24.21   /home/pavan.pagilla/Desktop/delete   master  git revert 35435d10d1969e8daf488ac39cc15b94903887e3
+Auto-merging file
+CONFLICT (content): Merge conflict in file
+error: could not revert 35435d1... 2: line 2 in file
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+                                                                                                                             ✗
+
+  13/09/2023   09:24.26   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+<<<<<<< HEAD
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+=======
+>>>>>>> parent of 35435d1 (2: line 2 in file)
+                                                                                                                             ✓
+
+  13/09/2023   09:25.04   /home/pavan.pagilla/Desktop/delete   master  git revert --abort
+                                                                                                                             ✓
+
+  13/09/2023   09:26.46   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+                                                                                                                             ✓
+
+  13/09/2023   09:26.49   /home/pavan.pagilla/Desktop/delete   master  git revert 35435d10d1969e8daf488ac39cc15b94903887e3
+Auto-merging file
+CONFLICT (content): Merge conflict in file
+error: could not revert 35435d1... 2: line 2 in file
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+                                                                                                                             ✗
+
+  13/09/2023   09:27.07   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+<<<<<<< HEAD
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+=======
+>>>>>>> parent of 35435d1 (2: line 2 in file)
+                                                                                                                             ✓
+
+  13/09/2023   09:27.19   /home/pavan.pagilla/Desktop/delete   master  git revert --skip
+                                                                                                                             ✓
+
+  13/09/2023   09:27.45   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+                                                                                                                             ✓
+
+  13/09/2023   09:27.47   /home/pavan.pagilla/Desktop/delete   master  git revert 35435d10d1969e8daf488ac39cc15b94903887e3
+Auto-merging file
+CONFLICT (content): Merge conflict in file
+error: could not revert 35435d1... 2: line 2 in file
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+                                                                                                                             ✗
+
+  13/09/2023   09:28.30   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+<<<<<<< HEAD
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+=======
+>>>>>>> parent of 35435d1 (2: line 2 in file)
+                                                                                                                             ✓
+
+  13/09/2023   09:28.50   /home/pavan.pagilla/Desktop/delete   master  vi file
+                                                                                                                             ✓
+
+  13/09/2023   09:29.04   /home/pavan.pagilla/Desktop/delete   master  git add file
+                                                                                                                             ✓
+
+  13/09/2023   09:29.46   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+                                                                                                                             ✓
+
+  13/09/2023   09:29.51   /home/pavan.pagilla/Desktop/delete   master  git revert --continue
+[master 587f021] yes to Revert "2: line 2 in file"
+ 1 file changed, 3 deletions(-)
+                                                                                                                             ✓
+
+  13/09/2023   09:30.14   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+                                                                                                                             ✓
+
+  13/09/2023   09:30.18   /home/pavan.pagilla/Desktop/delete   master 
+
+commit 587f021eb6a98a58ccfe92433690de68cb5ffac7 (HEAD -> master)
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:29:58 2023 +0530
+
+    yes to Revert "2: line 2 in file"
+
+    This reverts commit 35435d10d1969e8daf488ac39cc15b94903887e3.
+
+commit 6c77fe085830b2907ed2d96ac2ec217c9bbc0721
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:21:23 2023 +0530
+
+    yes to Revert "5:line5 in file"
+
+    This reverts commit 4f4170c418bc5bc07bf9609bcaf36aa009f000d4.
+
+commit 4f4170c418bc5bc07bf9609bcaf36aa009f000d4
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:16:43 2023 +0530
+
+    5:line5 in file
+
+commit d0fe3f20fd77a79709383c14456df33da26db880
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:16:08 2023 +0530
+
+    4:line4 in file
+
+commit 3e2765a62012ab4c5f25a605766ab014e0d3055c
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:13:05 2023 +0530
+
+    3:line3 in file
+
+commit 35435d10d1969e8daf488ac39cc15b94903887e3
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:11:22 2023 +0530
+
+    2: line 2 in file
+
+commit ab621150765edfaeb98d7f0ed96bf8eb22b6bde3
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:08:13 2023 +0530
+
+    1: file first line
+
+===================================================================
+
+
+  13/09/2023   09:32.58   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+                                                                                                                             ✓
+
+  13/09/2023   09:33.04   /home/pavan.pagilla/Desktop/delete   master  git revert d0fe3f20fd77a79709383c14456df33da26db880
+Auto-merging file
+CONFLICT (content): Merge conflict in file
+error: could not revert d0fe3f2... 4:line4 in file
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+                                                                                                                             ✗
+
+  13/09/2023   09:33.50   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+<<<<<<< HEAD
+=======
+line2 for commit-2
+line3 for commit-3
+>>>>>>> parent of d0fe3f2 (4:line4 in file)
+                                                                                                                             ✓
+
+  13/09/2023   09:33.56   /home/pavan.pagilla/Desktop/delete   master  vi file
+                                                                                                                             ✓
+
+  13/09/2023   09:34.32   /home/pavan.pagilla/Desktop/delete   master  git add file
+                                                                                                                             ✓
+
+  13/09/2023   09:34.48   /home/pavan.pagilla/Desktop/delete   master  git revert --continue
+[master e30145b] yes to Revert "4:line4 in file"
+ 1 file changed, 2 insertions(+)
+                                                                                                                             ✓
+
+  13/09/2023   09:35.17   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+                                                                                                                             ✓
+
+  13/09/2023   09:35.27   /home/pavan.pagilla/Desktop/delete   master 
+
+

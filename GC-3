@@ -1,0 +1,233 @@
+
+
+
+observation: 
+commit-8 has to be reverted, i.e., till line7 has to be there and just enough content, so upon manual update the reverting of commit is successful.
+
+
+  13/09/2023   10:21.12   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+line7 for commit-7 got added in commit-9
+line8 for commit-8
+line9 for commit-9 and updated line7
+                                                                                                                             ✓
+
+  13/09/2023   10:21.16   /home/pavan.pagilla/Desktop/delete   master  git revert a80c22eebb527e3b627a43c03a9bf99726883091
+Auto-merging file
+CONFLICT (content): Merge conflict in file
+error: could not revert a80c22e... 8:line8 in file
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+                                                                                                                             ✗
+
+  13/09/2023   10:21.34   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+<<<<<<< HEAD
+line7 for commit-7 got added in commit-9
+line8 for commit-8
+line9 for commit-9 and updated line7
+=======
+line7 for commit-7
+>>>>>>> parent of a80c22e (8:line8 in file)
+                                                                                                                             ✓
+
+  13/09/2023   10:21.37   /home/pavan.pagilla/Desktop/delete   master  vi file
+                                                                                                                             ✓
+
+  13/09/2023   10:22.39   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+line7 for commit-7
+                                                                                                                             ✓
+
+  13/09/2023   10:22.47   /home/pavan.pagilla/Desktop/delete   master  git add file
+                                                                                                                             ✓
+
+  13/09/2023   10:22.52   /home/pavan.pagilla/Desktop/delete   master  git revert --continue
+[master c30742a] yes to Revert "8:line8 in file"
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+                                                                                                                             ✓
+
+  13/09/2023   10:23.12   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+line7 for commit-7
+                                                                                                                             ✓
+
+  13/09/2023   10:23.19   /home/pavan.pagilla/Desktop/delete   master 
+
+
+
+
+
+
+
+  13/09/2023   10:03.53   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+line5 for commit-5
+                                                                                                                             ✓
+
+  13/09/2023   10:03.59   /home/pavan.pagilla/Desktop/delete   master  vi file
+                                                                                                                             ✓
+
+  13/09/2023   10:04.21   /home/pavan.pagilla/Desktop/delete   master  git add file
+                                                                                                                             ✓
+
+  13/09/2023   10:04.27   /home/pavan.pagilla/Desktop/delete   master  git commit -m "6:line6 in file"
+[master 1c51b25] 6:line6 in file
+ 1 file changed, 1 insertion(+)
+                                                                                                                             ✓
+
+  13/09/2023   10:04.44   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+                                                                                                                             ✓
+
+  13/09/2023   10:06.05   /home/pavan.pagilla/Desktop/delete   master  vi file
+                                                                                                                             ✓
+
+  13/09/2023   10:07.50   /home/pavan.pagilla/Desktop/delete   master  git add file
+                                                                                                                             ✓
+
+  13/09/2023   10:07.54   /home/pavan.pagilla/Desktop/delete   master  git commit -m "7:line7 in file"
+[master 8fc87c2] 7:line7 in file
+ 1 file changed, 1 insertion(+)
+                                                                                                                             ✓
+
+  13/09/2023   10:08.10   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+line7 for commit-7
+                                                                                                                             ✓
+
+  13/09/2023   10:08.14   /home/pavan.pagilla/Desktop/delete   master  vi file
+                                                                                                                             ✓
+
+  13/09/2023   10:11.43   /home/pavan.pagilla/Desktop/delete   master  git add file
+                                                                                                                             ✓
+
+  13/09/2023   10:11.51   /home/pavan.pagilla/Desktop/delete   master  git commit -m "8:line8 in file"
+[master a80c22e] 8:line8 in file
+ 1 file changed, 1 insertion(+)
+
+                                                                                                                             ✓
+  13/09/2023   10:11.58   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+line7 for commit-7
+line8 for commit-8
+                                                                                                                             ✓
+
+  13/09/2023   10:12.07   /home/pavan.pagilla/Desktop/delete   master  vi file
+                                                                                                                             ✓
+
+  13/09/2023   10:15.41   /home/pavan.pagilla/Desktop/delete   master  git add file
+                                                                                                                             ✓
+
+  13/09/2023   10:15.46   /home/pavan.pagilla/Desktop/delete   master  git commit -m "9:line9 in file and added content in line7"
+[master 3019ace] 9:line9 in file and added content in line7
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+                                                                                                                             ✓
+
+  13/09/2023   10:16.26   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+line7 for commit-7 got added in commit-9
+line8 for commit-8
+line9 for commit-9 and updated line7
+        
+
+====log :                                                                                                                     ✓
+commit 3019acedfcd71c36a8dbf5c02fac5c0f601b34ad (HEAD -> master)
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 10:16:26 2023 +0530
+
+    9:line9 in file and added content in line7
+
+commit a80c22eebb527e3b627a43c03a9bf99726883091
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 10:12:06 2023 +0530
+
+    8:line8 in file
+
+commit 8fc87c24081304564ce838273e160598eb03cc92
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 10:08:09 2023 +0530
+
+    7:line7 in file
+
+commit 1c51b2583b633142c666acd1b8ea3358bd98f319
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 10:04:43 2023 +0530
+
+    6:line6 in file
+
+commit 218cefcc5a62d70a66ba83673a8668e556b144fd
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:49:24 2023 +0530
+
+    yes to Revert "yes to Revert "5:line5 in file""
+
+    This reverts commit 6c77fe085830b2907ed2d96ac2ec217c9bbc0721.
+
+
+
+
+======================================================================================================
+line1 for commit-1
+<<<<<<< HEAD
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+=======
+>>>>>>> parent of 35435d1 (2: line 2 in file)
+ 
+ 
+line1 for commit-1
+<<<<<<< HEAD
+=======
+line2 for commit-2
+line3 for commit-3
+>>>>>>> parent of d0fe3f2 (4:line4 in file)
+               

@@ -1,0 +1,103 @@
+
+observation;: 
+reverting to before updated all the content
+
+
+
+commit 6e3661745d3b28edeb1ae27ff31fd6ff94224e1e
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 10:31:07 2023 +0530
+
+    10: updated all the content
+
+diff --git a/file b/file
+index f4b8f12..fe8cde0 100644
+--- a/file
++++ b/file
+@@ -1,7 +1,10 @@
+-line1 for commit-1
+-line2 for commit-2
++line1 for commit-1 upd in commit20
++line2 for commi"*" rem in commit20
+ line3 for commit-3
+ line4 for commit-4
+-line5 for commit-5
++removed line5
+ line6 for commit-6
+-line7 for commit-7
++linex for commit-7
++
++
++modifyied most of the content for commit-10
+
+
+
+
+  13/09/2023   11:05.03   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+                                                                                                                             ✓
+
+  13/09/2023   11:05.06   /home/pavan.pagilla/Desktop/delete   master  git revert 6e3661745d3b28edeb1ae27ff31fd6ff94224e1e
+Auto-merging file
+CONFLICT (content): Merge conflict in file
+error: could not revert 6e36617... 10: updated all the content
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+                                                                                                                             ✗
+
+  13/09/2023   11:06.51   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+<<<<<<< HEAD
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+=======
+line3 for commit-3
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+line7 for commit-7
+>>>>>>> parent of 6e36617 (10: updated all the content)
+                                                                                                                             ✓
+
+  13/09/2023   11:06.54   /home/pavan.pagilla/Desktop/delete   master  vi file
+                                                                                                                             ✓
+
+  13/09/2023   11:07.16   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+line7 for commit-7
+                                                                                                                             ✓
+
+  13/09/2023   11:07.18   /home/pavan.pagilla/Desktop/delete   master  git add .
+                                                                                                                             ✓
+
+  13/09/2023   11:07.26   /home/pavan.pagilla/Desktop/delete   master  git revert --continue
+[master 54d63a8] yes to Revert "10: updated all the content"
+ 1 file changed, 2 insertions(+)
+                                                                                                                             ✓
+
+  13/09/2023   11:07.50   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+line7 for commit-7
+                                                                                                                             ✓
+
+  13/09/2023   11:07.56   /home/pavan.pagilla/Desktop/delete   master 

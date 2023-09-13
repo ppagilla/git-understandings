@@ -1,0 +1,59 @@
+
+Observation: 
+reverting to 8fc87c24081304564ce838273e160598eb03cc92, before line 7 contains till line6
+
+
+  13/09/2023   11:03.03   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+                                                                                                                             ✓
+
+  13/09/2023   11:03.06   /home/pavan.pagilla/Desktop/delete   master  git revert 8fc87c24081304564ce838273e160598eb03cc92
+Auto-merging file
+CONFLICT (content): Merge conflict in file
+error: could not revert 8fc87c2... 7:line7 in file
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+                                                                                                                             ✗
+
+  13/09/2023   11:03.18   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+<<<<<<< HEAD
+=======
+line3 for commit-3
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+>>>>>>> parent of 8fc87c2 (7:line7 in file)
+                                                                                                                             ✓
+
+  13/09/2023   11:03.21   /home/pavan.pagilla/Desktop/delete   master  vi file
+                                                                                                                             ✓
+
+  13/09/2023   11:03.55   /home/pavan.pagilla/Desktop/delete   master  git add file
+                                                                                                                             ✓
+
+  13/09/2023   11:04.00   /home/pavan.pagilla/Desktop/delete   master  cat file; git revert --continue
+line1 for commit-1
+line2 for commit-2
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+[master 660bac8] yes to Revert "7:line7 in file"
+ 1 file changed, 3 insertions(+)
+                                                                                                                             ✓
+
+  13/09/2023   11:05.03   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line4 for commit-4
+line5 for commit-5
+line6 for commit-6
+                                                                                                                             ✓
+
+  13/09/2023   11:05.06   /home/pavan.pagilla/Desktop/del

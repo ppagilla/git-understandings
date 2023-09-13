@@ -1,0 +1,51 @@
+OBSERVATION:
+
+after reverting the revert commit made for line-5,
+
+first revert commit made for line-5 represents the first 4 lines in the file (but before this, we have 5 lines(5th line is added in commit:5))
+Now reverting above in the sense line-5 is to be added, and this is done by modifying the HEAD content after revert command.
+
+
+  13/09/2023   09:54.37   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1
+line2 for commit-2
+line3 for commit-3
+line4 for commit-4
+line5 for commit-5
+                                                                                                                             ✓
+
+  13/09/2023   09:54.49   /home/pavan.pagilla/Desktop/delete   master 
+
+
+
+commit 218cefcc5a62d70a66ba83673a8668e556b144fd (HEAD -> master)
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:49:24 2023 +0530
+
+    yes to Revert "yes to Revert "5:line5 in file""
+
+    This reverts commit 6c77fe085830b2907ed2d96ac2ec217c9bbc0721.
+
+commit e30145b75aed565eb2a509379db83844935aa4ce
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:34:57 2023 +0530
+
+    yes to Revert "4:line4 in file"
+
+    This reverts commit d0fe3f20fd77a79709383c14456df33da26db880.
+
+commit 587f021eb6a98a58ccfe92433690de68cb5ffac7
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:29:58 2023 +0530
+
+    yes to Revert "2: line 2 in file"
+
+    This reverts commit 35435d10d1969e8daf488ac39cc15b94903887e3.
+
+commit 6c77fe085830b2907ed2d96ac2ec217c9bbc0721
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:21:23 2023 +0530
+
+    yes to Revert "5:line5 in file"
+
+    This reverts commit 4f4170c418bc5bc07bf9609bcaf36aa009f000d4.

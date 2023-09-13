@@ -1,0 +1,94 @@
+
+OBSERVATION: 
+reverting to before line5, ideally 4 lines with default content is to be there but it is against the expected.
+
+
+
+commit 4f4170c418bc5bc07bf9609bcaf36aa009f000d4
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:16:43 2023 +0530
+
+    5:line5 in file
+
+commit d0fe3f20fd77a79709383c14456df33da26db880
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:16:08 2023 +0530
+
+    4:line4 in file
+
+commit 3e2765a62012ab4c5f25a605766ab014e0d3055c
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:13:05 2023 +0530
+
+    3:line3 in file
+
+commit 35435d10d1969e8daf488ac39cc15b94903887e3
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:11:22 2023 +0530
+
+    2: line 2 in file
+
+commit ab621150765edfaeb98d7f0ed96bf8eb22b6bde3
+Author: ppagilla <ppagilla@abc.com>
+Date:   Wed Sep 13 09:08:13 2023 +0530
+
+    1: file first line
+                                                                                                                             ✓
+
+  13/09/2023   10:49.39   /home/pavan.pagilla/Desktop/delete   master  git revert 4f4170c418bc5bc07bf9609bcaf36aa009f000d4
+Auto-merging file
+CONFLICT (content): Merge conflict in file
+error: could not revert 4f4170c... 5:line5 in file
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+                                                                                                                             ✗
+
+  13/09/2023   10:49.47   /home/pavan.pagilla/Desktop/delete   master  catfile
+catfile: command not found
+                                                                                                                             ✗
+
+  13/09/2023   10:49.51   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1 upd in commit20
+line2 for commi"*" rem in commit20
+line3 for commit-3
+line4 for commit-4
+<<<<<<< HEAD
+removed line5
+line6 for commit-6
+line7 for commit-7 got added in commit-9
+line8 for commit-8
+line9 for commit-9 and updated line7
+=======
+>>>>>>> parent of 4f4170c (5:line5 in file)
+                                                                                                                             ✓
+
+  13/09/2023   10:49.54   /home/pavan.pagilla/Desktop/delete   master  vi file
+                                                                                                                             ✓
+
+  13/09/2023   10:50.41   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1 upd in commit20
+line2 for commi"*" rem in commit20
+line3 for commit-3
+line4 for commit-4
+                                                                                                                             ✓
+
+  13/09/2023   10:50.44   /home/pavan.pagilla/Desktop/delete   master  git add file
+                                                                                                                             ✓
+
+  13/09/2023   10:50.49   /home/pavan.pagilla/Desktop/delete   master  git revert --continue
+[master ee04669] yes to Revert "5:line5 in file"
+ 1 file changed, 5 deletions(-)
+                                                                                                                             ✓
+
+  13/09/2023   10:51.14   /home/pavan.pagilla/Desktop/delete   master  cat file
+line1 for commit-1 upd in commit20
+line2 for commi"*" rem in commit20
+line3 for commit-3
+line4 for commit-4
+                                                                                                                             ✓
+
+  13/09/2023   10:51.19   /home/pavan.pagilla/Desktop/delete   master 
